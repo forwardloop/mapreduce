@@ -24,7 +24,7 @@ let mapUserTransactions datasetFile =
 
 // Reduce 
 let userTransactions = mapUserTransactions inputFile
-let reduceFile = 
+let reduceFile userTransactions = 
   Array.fold
     (fun (acc : Map<string, int>) ((user, num) : string * int) ->
       if Map.containsKey user acc then
@@ -38,7 +38,7 @@ let reduceFile =
 // Show 5 users w/ highest transasction totals
 let topUsersOutput reduceOutput = 
   let sortedResults = 
-    reduceFile
+    reduceFile userTransactions
     |> Map.toSeq
     |> Seq.sortBy (fun (ip, total) -> -total) 
     |> Seq.take 5
