@@ -3,7 +3,7 @@ open System.IO
 open System.Collections.Generic
 
 // Map 
-let inputFile = @"../../BigDataset.csv"
+let inputFile = @"big-dataset.csv"
 let mapUserTransactions datasetFile =
   let fileReader datasetFile = 
     seq { use fileReader = new StreamReader(File.OpenRead(datasetFile))
