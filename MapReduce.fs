@@ -1,9 +1,12 @@
-﻿open System
+﻿module MapReduce
+
+open System
 open System.IO
 open System.Collections.Generic
 
-// Map 
 let inputFile = @"big-dataset.csv"
+
+// Map 
 let mapUserTransactions datasetFile =
   let fileReader datasetFile = 
     seq { use fileReader = new StreamReader(File.OpenRead(datasetFile))
@@ -11,7 +14,7 @@ let mapUserTransactions datasetFile =
         yield fileReader.ReadLine() }    
 
   let parseLines = 
-    let line = fileReader inputFile 
+    let line = fileReader datasetFile 
     line
     |> Seq.filter (fun line -> not (line.StartsWith("#")))
     |> Seq.map (fun line -> line.Split [|','|])
@@ -42,5 +45,3 @@ let topUsersOutput reduceOutput =
   sortedResults
   |> Seq.iter(fun (user, total) ->
     printfn "%s, %d" user total);;
-
-reduceFile |> topUsersOutput
