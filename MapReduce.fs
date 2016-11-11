@@ -4,8 +4,6 @@ open System
 open System.IO
 open System.Collections.Generic
 
-let inputFile = @"big-dataset.csv"
-
 // Map 
 let mapUserTransactions datasetFile =
   let fileReader datasetFile = 
@@ -32,11 +30,11 @@ let reduceFile userTransactions =
     Map.empty
     userTransactions
 
-// Show 5 users w/ highest transaction totals
-let topUsersOutput reduceOutput = 
-  let userTransactions = mapUserTransactions inputFile
+// Print
+let usersWithHighestTransactions inputFile = 
   let sortedResults = 
-    reduceFile userTransactions
+    mapUserTransactions inputFile
+    |> reduceFile 
     |> Map.toSeq
     |> Seq.sortBy (fun (user, total) -> -total) 
     |> Seq.take 5

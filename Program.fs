@@ -2,4 +2,4 @@
 
 open MapReduce
 
-reduceFile |> topUsersOutput
+usersWithHighestTransactions @"big-dataset.csv"
