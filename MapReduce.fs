@@ -19,28 +19,26 @@ let mapUserTransactions datasetFile =
     |> Seq.filter (fun line -> not (line.StartsWith("#")))
     |> Seq.map (fun line -> line.Split [|','|])
     |> Seq.map (fun line -> line.[0], Int32.Parse line.[1])
-    |> Seq.toArray
   parseLines
 
 // Reduce 
-let userTransactions = mapUserTransactions inputFile
 let reduceFile userTransactions = 
-  Array.fold
+  Seq.fold
     (fun (acc : Map<string, int>) ((user, num) : string * int) ->
-      if Map.containsKey user acc then
-        let total = acc.[user]
-        Map.add user (total + num) acc
-      else
-        Map.add user num acc)
+      let total = match acc |> Map.tryFind user with
+                  | Some x -> x
+                  | None -> 0  
+      Map.add user (total + num) acc)  
     Map.empty
     userTransactions
 
-// Show 5 users w/ highest transasction totals
+// Show 5 users w/ highest transaction totals
 let topUsersOutput reduceOutput = 
+  let userTransactions = mapUserTransactions inputFile
   let sortedResults = 
     reduceFile userTransactions
     |> Map.toSeq
-    |> Seq.sortBy (fun (ip, total) -> -total) 
+    |> Seq.sortBy (fun (user, total) -> -total) 
     |> Seq.take 5
   sortedResults
   |> Seq.iter(fun (user, total) ->

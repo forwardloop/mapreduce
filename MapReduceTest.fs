@@ -3,8 +3,11 @@
 open NUnit.Framework
 open FsUnit
 
+let User1 = "usr1"
+let User2 = "usr2"
+
 [<Test>]
-let ``When reducing [|("usr1", 1); ("usr2", 1); ("usr1", 1)|] expect Map(("usr1", 2),("usr2", 1))``() = 
-    let inputArr = [|("usr1", 1); ("usr2", 1); ("usr1", 1)|]
-    let expect = Map.empty.Add("usr1", 2).Add("usr2", 1)
-    MapReduce.reduceFile inputArr |> should equal expect
+let ``Reducing [(User1, 1); (User2, 1); (User1, 1)] should produce Map((User1, 2),(User2, 1))``() = 
+    let input = [(User1, 1); (User2, 1); (User1, 1)]
+    let expectOutput = Map.empty.Add(User1, 2).Add(User2, 1)
+    MapReduce.reduceFile input |> should equal expectOutput
