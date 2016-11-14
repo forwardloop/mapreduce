@@ -4,11 +4,11 @@
 
 A large CSV file contains values of a parameter read off cars' engines during a race. The data comes on channels with 1 microsecond frequency. Each row contains the name of a driver, parameter value and the timestamp. 
 
-Write a programme that computes an average value of the parameter for every driver and prints 3 top positions. Consider efficient use of computer memory.
+Write a programme that computes an average value of the parameter for every driver and prints top three positions. Consider efficient use of computer memory.
 
-## Example:
+## Example
 
-With input CSV:
+For input:
 
 ```
 Alonzo,4.32,12313123232132
