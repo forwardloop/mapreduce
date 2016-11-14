@@ -12,15 +12,15 @@ For input:
 
 ```
 Alonzo,4.32,1479136979429120
-Verstrappen,4.11,1479136979429120
+Verstrappen,4.75,1479136979429120
 Alonzo,4.88,1479136979429121
 ```
 
 the output should be:
 
 ```
+Verstrappen,4.75
 Alonzo,4.60
-Verstrappen,4.11
 ```
 
 ## Deliverables
