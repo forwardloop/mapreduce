@@ -1,9 +1,0 @@
-# usrx total: x*10, except usr1: 35
-#
-# User Id, Transaction value
-usr1,10
-usr2,20
-usr1,25
-usr3,30
-usr4,40
-usr5,50

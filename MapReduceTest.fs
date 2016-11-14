@@ -3,11 +3,11 @@
 open NUnit.Framework
 open FsUnit
 
-let User1 = "usr1"
-let User2 = "usr2"
+let Driver1 = "Nasr"
+let Driver2 = "Sainz"
 
 [<Test>]
-let ``Reducing [(User1, 1); (User2, 1); (User1, 1)] should produce Map((User1, 2),(User2, 1))``() = 
-    let input = [(User1, 1); (User2, 1); (User1, 1)]
-    let expectOutput = Map.empty.Add(User1, 2).Add(User2, 1)
+let ``Reducing [(Driver1, 1.0); (Driver2, 1.0); (Driver1, 2.0)] should produce Map((Driver1, 1.5),(Driver2, 1.0))``() = 
+    let input = [(Driver1, 1.0); (Driver2, 1.0); (Driver1, 2.0)]
+    let expectOutput = Map.empty.Add(Driver1, (3.0, 2)).Add(Driver2, (1.0,1))
     MapReduce.reduceFile input |> should equal expectOutput

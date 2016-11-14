@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <None Include="App.config" />
-    <None Include="big-dataset.csv" />
+    <None Include="parameter.csv" />
     <None Include="README.md" />
     <Compile Include="MapReduce.fs" />
     <Compile Include="MapReduceTest.fs" />

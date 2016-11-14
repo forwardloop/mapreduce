@@ -1,0 +1,14 @@
+# Expect result:
+# Verstrappen, 4.700000
+# Hamilton, 4.525000
+# Alonzo, 4.350000
+#
+# Driver name,Parameter Value,Timestamp
+Alonzo,4.30,1479136979429120
+Verstrappen,4.75,1479136979429120
+Hamilton,4.50,1479136979429120
+Kvyat,4.10,1479136979429120
+Alonzo,4.40,1479136979429121
+Verstrappen,4.65,1479136979429121
+Hamilton,4.55,1479136979429121
+Kvyat,4.15,1479136979429121
