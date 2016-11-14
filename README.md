@@ -10,5 +10,5 @@ Alonzo,4.87,12313123232133
 Verstrappen",4.11,12313123232132
 ```
 
-Write a programme that computes an average value of the parameter for every driver and print 3 top positions.
+Write a programme that computes an average value of the parameter for every driver and prints 3 top positions.
 Consider efficient use of computer memory. Use Java, Scala, C# or F#. 
