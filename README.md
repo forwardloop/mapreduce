@@ -2,7 +2,7 @@
 
 ## Task
 
-A CSV file contains values of a parameter read off cars' engines during a race. The data comes on channels with 1 microsecond frequency. Each row contains the name of a driver, parameter value and the timestamp. 
+A CSV file contains values of a parameter read off cars' engines during a race. The data comes on channels with 1 microsecond frequency. Each row contains the name of a driver, parameter value and a timestamp. 
 
 Write a programme that computes an average value of the parameter for every driver and prints top three positions.
 
