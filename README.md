@@ -11,9 +11,9 @@ Write a programme that computes an average value of the parameter for every driv
 For input:
 
 ```
-Alonzo,4.32,12313123232132
-Alonzo,4.88,12313123232133
-Verstrappen,4.11,12313123232132
+Alonzo,4.32,1479136979429120
+Verstrappen,4.11,1479136979429120
+Alonzo,4.88,1479136979429121
 ```
 
 the output should be:
