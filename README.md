@@ -2,9 +2,9 @@
 
 ## Task
 
-A large CSV file contains values of a parameter read off cars' engines during a race. The data comes on channels with 1 microsecond frequency.
+A large CSV file contains values of a parameter read off cars' engines during a race. The data comes on channels with 1 microsecond frequency. Each row contains the name of a driver, parameter value and the timestamp. 
 
-Each row contains the name of a driver, parameter value and the timestamp. Write a programme that computes an average value of the parameter for every driver and prints 3 top positions. Consider efficient use of computer memory.
+Write a programme that computes an average value of the parameter for every driver and prints 3 top positions. Consider efficient use of computer memory.
 
 ## Example:
 
